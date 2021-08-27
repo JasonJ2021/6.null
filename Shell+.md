@@ -88,7 +88,7 @@ shellcheck 可以debug sh/bash 脚本
 
 ### Shell Tools
 
-##### Finding files
+#### Finding files
 find会迭代地寻找所有符合一定要求的文件
     
     #Find all directories named src
@@ -111,3 +111,29 @@ find也可以帮助我们对找到的文件进行操作e.g.
 If you run find with exec, {} expands to the filename of each file or directory found with find (so that ls in your example gets every found filename as an argument - note that it calls ls or whatever other command you specify once for each file found).
 
 Semicolon ; ends the command executed by exec. It needs to be escaped with \ so that the shell you run find inside does not treat it as its own special character, but rather passes it to find.
+
+[fd](https://github.com/sharkdp/fd)是一个很好的替换选择
+[locate](https://www.man7.org/linux/man-pages/man1/locate.1.html)可以把以前搜索过的存储到数据库中
+
+#### Finding code
+##### grep
+grep是一个非常多功能强大的工具,有许多的flags
+-C:for getting the context around the matching line
+-v:for inverting the match , i.e. print all lines that do not match the pattern
+-R:可以在多个文件夹中寻找文件
+e.g.  **grep -C 5**会打印匹配行前面和后面的五行
+
+##### rg
+[rg](https://github.com/BurntSushi/ripgrep)是grep的一个替代品，可以实现完全相同的功能
+使用示例：
+    #Find all python files there I used the requests library
+    rg -t py 'import requests'
+    #Find all files without a shebang line
+    rg -u --files-without-match "^#!"
+    #Find all mmatches of foo and print the following 5 lines
+    rg foo -A 5
+    #Print statistics of matches
+    rg --stats PATTERN
+
+#### Directory Navigation
+##### tree
