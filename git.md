@@ -1,6 +1,10 @@
 - [Version Control : Git](#version-control--git)
   - [Git Command-line interface](#git-command-line-interface)
     - [Basics](#basics)
+    - [Branching and merging](#branching-and-merging)
+    - [Remotes](#remotes)
+    - [Undo](#undo)
+    - [Advanced Git](#advanced-git)
   - [Git's data model](#gits-data-model)
     - [Snapshots](#snapshots)
     - [Modeling history: realating snapshots](#modeling-history-realating-snapshots)
@@ -23,6 +27,40 @@
 - git diff \<filename> : show changes you made relative to the staging area
 - git diff \<revision> \<filename> : show differences in a file between snapshots
 - git checkout <revision> : updata HEAD and current branch
+
+### Branching and merging
+- git branch : show branches
+- git branch \<name> : creates a branch
+- git checkout -b \<name> : equal to git branch \<name> ; git checkout \<name>
+- git merge \<revision> : merges into the current branch
+- git mergetool : use a fancy tool to help resolve merge conflicts
+
+### Remotes
+
+- git remote : list remotes
+- git remote add \<name> \<url> : add a remote 
+- git push \<remote> \<local branch> : \<remote branch> :send objects to remote , and update remote reference
+- git branch --set-upstream-to=\<remote>/\<remote branch> : set up correspondence between between local and remote branch
+- git fetch : retrive objects / references from a remote
+- git pull : same as git fetch : git merge
+- git clone
+
+### Undo
+- git commit --amend : edit a commit's contents/message
+- git reset HEAD \<file> : unstage a file
+- git checkout -- \<file>:discard changes
+
+### Advanced Git 
+Advanced Git
+- git config: Git is highly customizable
+
+- git clone --depth=1: shallow clone, without entire version history
+- git add -p: interactive staging
+- git rebase -i: interactive rebasing
+- git blame: show who last edited which line
+- git stash: temporarily remove modifications to working directory
+- git bisect: binary search history (e.g. for regressions)
+- .gitignore: specify intentionally untracked files to ignore
 
 
 ## Git's data model
