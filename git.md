@@ -21,7 +21,10 @@
 - git log
 - git log --all --graph --decorate : visualizes history as a DAG
 - git diff \<filename> : show changes you made relative to the staging area
-- 
+- git diff \<revision> \<filename> : show differences in a file between snapshots
+- git checkout <revision> : updata HEAD and current branch
+
+
 ## Git's data model
 
 ### Snapshots
