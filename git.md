@@ -40,7 +40,7 @@
 - git remote : list remotes
 - git remote add \<name> \<url> : add a remote 
 - git push \<remote> \<local branch> : \<remote branch> :send objects to remote , and update remote reference
-- git branch --set-upstream-to=\<remote>/\<remote branch> : set up correspondence between between local and remote branch
+- git branch --set-upstream-to=\<local>/\<remote branch> : set up correspondence between between local and remote branch
 - git fetch : retrive objects / references from a remote
 - git pull : same as git fetch : git merge
 - git clone
